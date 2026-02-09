@@ -66,11 +66,16 @@ body.sunny {
 }
 
 body.rainy {
-  background: url("./images/rainy.gif") no-repeat center center fixed;
+  background: url("./images/rainy.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
 body.cloudy {
   background: url("./images/cloudy.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.snowy {
+  background: url("./images/snowy.jpg") no-repeat center center fixed;
   background-size: cover;
 }

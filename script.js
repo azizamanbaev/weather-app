@@ -17,14 +17,20 @@ async function getWeather(query) {
         // Меняем фон
         document.body.className = ""
         const condition = data.current.condition.text.toLowerCase()
+        console.log("Погода:", condition)
 
         if (condition.includes("дожд")) {
             document.body.classList.add("rainy")
-        } else if (condition.includes("ясно") || condition.includes("солнце")) {
+        } else if (condition.includes("ясно") || condition.includes("солнечно")) {
             document.body.classList.add("sunny")
-        } else if (condition.includes("обла")) {
+        } else if (condition.includes("обла") || condition.includes("пасмурно")) {
             document.body.classList.add("cloudy")
+        } else if (condition.includes("снег")) {
+            document.body.classList.add("snowy")
+        } else {
+            document.body.classList.add("cloudy") // фон по умолчанию
         }
+
     } catch (error) {
         temp.innerText = "—"
         desc.innerText = "Ошибка запроса"
@@ -51,6 +57,4 @@ btn.addEventListener('click', () => {
         icon.src = ""
         return
     }
-    getWeather(inp.value)
-    localStorage.setItem("lastCity", inp.value)
-})
+    getWeather(inp.value
