@@ -14,9 +14,16 @@ async function getWeather(query) {
         desc.innerText = data.current.condition.text
         icon.src = "https:" + data.current.condition.icon
 
-      
-        if (query !== "auto:ip") {
-            localStorage.setItem("lastCity", query)
+        // Меняем фон
+        document.body.className = ""
+        const condition = data.current.condition.text.toLowerCase()
+
+        if (condition.includes("дожд")) {
+            document.body.classList.add("rainy")
+        } else if (condition.includes("ясно") || condition.includes("солнце")) {
+            document.body.classList.add("sunny")
+        } else if (condition.includes("обла")) {
+            document.body.classList.add("cloudy")
         }
     } catch (error) {
         temp.innerText = "—"
@@ -25,6 +32,8 @@ async function getWeather(query) {
         console.error(error)
     }
 }
+
+// Автоопределение города по IP
 window.addEventListener("load", () => {
     const lastCity = localStorage.getItem("lastCity")
     if (lastCity) {
@@ -34,6 +43,7 @@ window.addEventListener("load", () => {
         getWeather("auto:ip")
     }
 })
+
 btn.addEventListener('click', () => {
     if (!inp.value.trim()) {
         temp.innerText = "—"
@@ -42,7 +52,5 @@ btn.addEventListener('click', () => {
         return
     }
     getWeather(inp.value)
+    localStorage.setItem("lastCity", inp.value)
 })
-
-
-
