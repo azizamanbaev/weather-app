@@ -57,4 +57,6 @@ btn.addEventListener('click', () => {
         icon.src = ""
         return
     }
-    getWeather(inp.value
+    getWeather(inp.value)
+    localStorage.setItem("lastCity", inp.value)
+})

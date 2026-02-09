@@ -61,21 +61,14 @@ button:hover {
 
 /* Фоны */
 body.sunny {
-  background: url("./images/sunny.jpg") no-repeat center center fixed;
+  background: url("../images/sunny.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
 body.rainy {
-  background: url("./images/rainy.jpg") no-repeat center center fixed;
+  background: url("../images/rainy.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
 body.cloudy {
-  background: url("./images/cloudy.jpg") no-repeat center center fixed;
-  background-size: cover;
-}
-
-body.snowy {
-  background: url("./images/snowy.jpg") no-repeat center center fixed;
-  background-size: cover;
-}
+  background: url("../images/cloudy.jpg") no-repeat center center
