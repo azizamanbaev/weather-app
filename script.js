@@ -14,7 +14,7 @@ async function getWeather(query) {
         desc.innerText = data.current.condition.text
         icon.src = "https:" + data.current.condition.icon
 
-        // 🔹 Сохраняем последний город в localStorage
+      
         if (query !== "auto:ip") {
             localStorage.setItem("lastCity", query)
         }
@@ -43,3 +43,6 @@ btn.addEventListener('click', () => {
     }
     getWeather(inp.value)
 })
+
+
+
